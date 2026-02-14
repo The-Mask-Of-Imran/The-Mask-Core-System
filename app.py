@@ -13,6 +13,7 @@ app = FastAPI(
     version="1.0.1"
 )
 
+# লোকাল Ollama মডেল (পরে Groq-এ চেঞ্জ করা যাবে)
 llm = ChatOllama(model="qwen2.5-coder:14b", base_url="http://localhost:11434")
 
 MEMORY_FILE = "memory.json"
@@ -25,18 +26,29 @@ class TaskMemoryManager:
         if os.path.exists(MEMORY_FILE):
             with open(MEMORY_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
-        return {"tasks": {}, "current_task_id": None, "last_updated": str(datetime.now())}
+        # প্রথমবার ফাইল না থাকলে ডিফল্ট স্ট্রাকচার
+        default = {
+            "tasks": {},
+            "current_task_id": None,
+            "last_updated": str(datetime.now())
+        }
+        self.save_memory(default)
+        return default
 
-    def save_memory(self):
+    def save_memory(self, memory=None):
+        if memory is None:
+            memory = self.memory
         with open(MEMORY_FILE, "w", encoding="utf-8") as f:
-            json.dump(self.memory, f, ensure_ascii=False, indent=2)
-        self.memory["last_updated"] = str(datetime.now())
+            json.dump(memory, f, ensure_ascii=False, indent=2)
 
     def add_conversation(self, user_message, ai_response):
         task_id = self.memory.get("current_task_id")
         if not task_id:
             task_id = str(len(self.memory["tasks"]) + 1)
-            self.memory["tasks"][task_id] = {"name": "General Chat", "conversations": []}
+            self.memory["tasks"][task_id] = {
+                "name": "General Chat",
+                "conversations": []
+            }
             self.memory["current_task_id"] = task_id
 
         conv = {
@@ -45,6 +57,7 @@ class TaskMemoryManager:
             "timestamp": str(datetime.now())
         }
         self.memory["tasks"][task_id]["conversations"].append(conv)
+        self.memory["last_updated"] = str(datetime.now())
         self.save_memory()
 
 class ChatRequest(BaseModel):
@@ -61,7 +74,7 @@ async def chat(request: ChatRequest):
         response = llm.invoke([HumanMessage(content=request.message)])
         answer = response.content
 
-        # মেমরিতে সেভ করা
+        # চ্যাট মেমরিতে সেভ করা
         memory_manager.add_conversation(request.message, answer)
 
         return {"response": answer}
