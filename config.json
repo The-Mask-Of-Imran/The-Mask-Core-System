@@ -1,6 +1,12 @@
+
+
 {
   "version": "1.0.0",
   "ollama_model": "qwen2.5-coder:14b",
   "ollama_url": "http://localhost:11434",
+  "groq_api_key": "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",
+  "openai_api_key": "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",
+  "gemini_api_key": "AIzaSyD2eLVbVAUaCYJP0a-qsyUsnb--E_hJO1U",
+  "groq_model": "llama-3.1-70b-versatile",
   "plugins": []
 }
