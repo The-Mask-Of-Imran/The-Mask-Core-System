@@ -1,57 +1,84 @@
-{
-  "tasks": {
-    "1": {
-      "name": "General Chat",
-      "conversations": [
-        {
-          "user": "hi",
-          "ai": "হাই! কিভাবে আমি আজকে আপনাকে সাহায্য করতে পারি?",
-          "timestamp": "2026-02-28 21:17:56.243354"
-        },
-        {
-          "user": "hi",
-          "ai": "হাই! কিভাবে আমি আজকে আপনাকে সাহায্য করতে পারি?",
-          "timestamp": "2026-03-01 11:55:46.373250"
-        },
-        {
-          "user": "হ্যালো, তুমি কেমন আছ?",
-          "ai": "হ্যালো! আমি ভালো আছি, ধন্যবাদ। আজ আপনার কী প্রয়োজন? আমি আপনাকে কীভাবে সাহায্য করতে পারি?",
-          "timestamp": "2026-03-02 15:45:06.095908"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০৩, OpenAI মডেল থেকে। আমি একটি অটোমেটিক প্রতিক্রিয়া জেনারেটিং মডেল, যা OpenAI এর মডেল দ্বারা ক্রিয়েট করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের তথ্য প্রদান করা, প্রশ্ন উত্তর দেওয়া এবং তাদের সাহায্য করা।",
-          "timestamp": "2026-03-02 15:46:55.724532"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০৩, OpenAI মডেল থেকে। আমি একটি অটোমেটিক প্রতিক্রিয়া জেনারেটিং মডেল, যা OpenAI এর মডেল দ্বারা ক্রিয়েট করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের তথ্য প্রদান করা, প্রশ্ন উত্তর দেওয়া এবং তাদের সাহায্য করা।",
-          "timestamp": "2026-03-02 15:57:25.394724"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০৩, OpenAI মডেল থেকে। আমি একটি অটোমেটিক প্রতিক্রিয়া জেনারেটিং মডেল, যা OpenAI এর মডেল দ্বারা ক্রিয়েট করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের তথ্য প্রদান করা, প্রশ্ন উত্তর দেওয়া এবং তাদের সাহায্য করা।",
-          "timestamp": "2026-03-02 16:00:28.964512"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০৪, Gemini মডেল থেকে। আমি একটি অ্যাডভান্সড AI হ্যাঁন্ডেল, যা Google এর গিমিনি প্ল্যাটফোর্মের উপর ভিত্তি করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের প্রশ্ন উত্তর দিতে, সাহায্য করতে এবং আমাদের সম্প্রচলিত অনুভূতি ও জ্ঞান ব্যবহার করে গতিশীল রিসপন্স প্রদান করতে।",
-          "timestamp": "2026-03-02 16:10:00.459554"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০১, Ollama মডেল থেকে। আমি একটি অটোমেটিক প্রতিক্রিয়া জেনারেটিং মডেল, যা Ollama এর মডেল দ্বারা ক্রিয়েট করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের তথ্য প্রদান করা, প্রশ্ন উত্তর দেওয়া এবং তাদের সাহায্য করা।",
-          "timestamp": "2026-03-02 16:22:39.353603"
-        },
-        {
-          "user": "তুমি কোন মডেল থেকে উত্তর দিচ্ছ? ০১, Ollama ০২, Groq? ০৩, OpenAI?  ০৪, Gemini?",
-          "ai": "আমি উত্তর দিচ্ছি ০৩, OpenAI মডেল থেকে। আমি একটি অটোমেটিক প্রতিক্রিয়া জেনারেটিং মডেল, যা OpenAI এর মডেল দ্বারা ক্রিয়েট করা হয়েছে। আমার উদ্দেশ্য হল ব্যবহারকারীদের তথ্য প্রদান করা, প্রশ্ন উত্তর দেওয়া এবং তাদের সাহায্য করা।",
-          "timestamp": "2026-03-02 16:36:48.128105"
-        }
-      ],
-      "category": "temporary"
-    }
-  },
-  "current_task_id": "1",
-  "last_updated": "2026-03-02 16:36:48.128125"
-}
+import os
+from groq import Groq
+from openai import OpenAI
+import google.generativeai as genai
+from langchain_ollama import ChatOllama
+from langchain_core.messages import HumanMessage
+
+class ModelRouter:
+    def __init__(self):
+        self.ollama = ChatOllama(model="qwen2.5-coder:14b", base_url="http://localhost:11434")
+        
+        # Groq - একাধিক key সাপোর্ট (comma-separated in env: GROQ_API_KEYS = "key1,key2,key3")
+        self.groq_keys = os.getenv("GROQ_API_KEYS", "").split(",")
+        self.groq = []  # একাধিক Groq ক্লায়েন্ট লিস্ট
+        for key in self.groq_keys:
+            if key.strip():
+                self.groq.append(Groq(api_key=key.strip()))
+        
+        self.openai_key = os.getenv("OPENAI_API_KEY")
+        self.openai = OpenAI(api_key=self.openai_key) if self.openai_key else None
+        
+        self.gemini_key = os.getenv("GEMINI_API_KEY")
+        if self.gemini_key:
+            genai.configure(api_key=self.gemini_key)
+            self.gemini = genai.GenerativeModel('gemini-1.5-flash')
+        else:
+            self.gemini = None
+        
+        self.api_calls = {"groq": 0, "openai": 0, "gemini": 0}
+        self.max_calls = {"groq": 100, "openai": 60, "gemini": 15}
+
+    def select_model(self, use_online=False):
+        if not use_online:
+            return "ollama"
+        if self.groq and self.api_calls["groq"] < self.max_calls["groq"]:
+            return "groq"
+        if self.openai and self.api_calls["openai"] < self.max_calls["openai"]:
+            return "openai"
+        if self.gemini and self.api_calls["gemini"] < self.max_calls["gemini"]:
+            return "gemini"
+        return "ollama"
+
+    async def invoke(self, messages, use_online=False):
+        try:
+            ollama_response = self.ollama.invoke(messages)
+            print("[MODEL USED] ollama (local)")
+            return ollama_response.content
+        except Exception as ollama_error:
+            print(f"[OLLAMA FAILED] {str(ollama_error)}")
+            
+            # অনলাইন মডেলে যাও
+            model = self.select_model(use_online=True)
+            print(f"[MODEL USED] {model} (fallback)")
+            
+            content = messages[0].content if messages else ""
+            
+            if model == "groq" and self.groq:
+                self.api_calls["groq"] += 1
+                for client in self.groq:  # একে একে সব key চেষ্টা
+                    try:
+                        response = client.chat.completions.create(
+                            messages=[{"role": "user", "content": content}],
+                            model="llama-3.3-70b-versatile"
+                        )
+                        return response.choices[0].message.content
+                    except Exception as key_error:
+                        print(f"[GROQ KEY FAILED] {str(key_error)} - Trying next key")
+                print("[ALL GROQ KEYS FAILED]")
+                
+            elif model == "openai" and self.openai:
+                self.api_calls["openai"] += 1
+                response = self.openai.chat.completions.create(
+                    messages=[{"role": "user", "content": content}],
+                    model="gpt-3.5-turbo"
+                )
+                return response.choices[0].message.content
+            
+            elif model == "gemini" and self.gemini:
+                self.api_calls["gemini"] += 1
+                response = self.gemini.generate_content(content)
+                return response.text
+            
+            else:
+                raise Exception("No available model after Ollama failed")

@@ -9,8 +9,12 @@ class ModelRouter:
     def __init__(self):
         self.ollama = ChatOllama(model="qwen2.5-coder:14b", base_url="http://localhost:11434")
         
-        self.groq_key = os.getenv("GROQ_API_KEY")
-        self.groq = Groq(api_key=self.groq_key) if self.groq_key else None
+        # Groq - একাধিক key সাপোর্ট (comma-separated in env: GROQ_API_KEYS = "key1,key2,key3")
+        self.groq_keys = os.getenv("GROQ_API_KEYS", "").split(",")
+        self.groq = []  # একাধিক Groq ক্লায়েন্ট লিস্ট
+        for key in self.groq_keys:
+            if key.strip():
+                self.groq.append(Groq(api_key=key.strip()))
         
         self.openai_key = os.getenv("OPENAI_API_KEY")
         self.openai = OpenAI(api_key=self.openai_key) if self.openai_key else None
@@ -18,7 +22,7 @@ class ModelRouter:
         self.gemini_key = os.getenv("GEMINI_API_KEY")
         if self.gemini_key:
             genai.configure(api_key=self.gemini_key)
-            self.gemini = genai.GenerativeModel('gemini-1.5-flash')  # আপডেটেড মডেল
+            self.gemini = genai.GenerativeModel('gemini-1.5-flash')
         else:
             self.gemini = None
         
@@ -37,7 +41,6 @@ class ModelRouter:
         return "ollama"
 
     async def invoke(self, messages, use_online=False):
-        # প্রথমে Ollama চেষ্টা
         try:
             ollama_response = self.ollama.invoke(messages)
             print("[MODEL USED] ollama (local)")
@@ -45,7 +48,7 @@ class ModelRouter:
         except Exception as ollama_error:
             print(f"[OLLAMA FAILED] {str(ollama_error)}")
             
-            # ফেল করলে অনলাইন
+            # অনলাইন মডেলে যাও
             model = self.select_model(use_online=True)
             print(f"[MODEL USED] {model} (fallback)")
             
@@ -53,12 +56,17 @@ class ModelRouter:
             
             if model == "groq" and self.groq:
                 self.api_calls["groq"] += 1
-                response = self.groq.chat.completions.create(
-                    messages=[{"role": "user", "content": content}],
-                    model="llama-3.3-70b-versatile"
-                )
-                return response.choices[0].message.content
-            
+                for client in self.groq:  # একে একে সব key চেষ্টা
+                    try:
+                        response = client.chat.completions.create(
+                            messages=[{"role": "user", "content": content}],
+                            model="llama-3.3-70b-versatile"
+                        )
+                        return response.choices[0].message.content
+                    except Exception as key_error:
+                        print(f"[GROQ KEY FAILED] {str(key_error)} - Trying next key")
+                print("[ALL GROQ KEYS FAILED]")
+                
             elif model == "openai" and self.openai:
                 self.api_calls["openai"] += 1
                 response = self.openai.chat.completions.create(
@@ -73,4 +81,4 @@ class ModelRouter:
                 return response.text
             
             else:
-                raise Exception("No available model")
+                raise Exception("No available model after Ollama failed")
